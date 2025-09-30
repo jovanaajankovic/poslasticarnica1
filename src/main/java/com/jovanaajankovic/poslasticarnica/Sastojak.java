@@ -43,6 +43,12 @@ public class Sastojak {
 	 public void setNaziv(String naziv) {
 		 this.naziv = naziv;
 	 }
-	 
-	 
+
+
+	 @Override
+	 public String toString() {
+		 return rb + ". " + naziv;
+	 }
+
+ 
 }
