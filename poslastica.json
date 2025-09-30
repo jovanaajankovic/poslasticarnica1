@@ -1,0 +1,20 @@
+{
+  "poslasticaID": 101,
+  "naziv": "Cokoladna torta",
+  "cenaPoKomadu": 500.0,
+  "opis": "Ukusna cokoladna torta",
+  "tipPoslastice": {
+    "tipPoslasticeID": 1,
+    "naziv": "Torta"
+  },
+  "sastojci": [
+    {
+      "rb": 1,
+      "naziv": "Cokolada"
+    },
+    {
+      "rb": 2,
+      "naziv": "Secer"
+    }
+  ]
+}

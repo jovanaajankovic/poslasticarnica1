@@ -2,7 +2,7 @@ package com.jovanaajankovic.poslasticarnica;
 
 public class Sastojak {
 	
-	 private Poslastica poslastica;
+	 private transient Poslastica poslastica;
 	 private int rb;
 	 private String naziv;
 
