@@ -42,7 +42,7 @@ public class TipPoslastice {
 		 if (naziv == null)
 				throw new NullPointerException("Naziv ne sme biti null.");
 			
-		if (naziv.trim().isEmpty())
+		if (naziv.isEmpty())
 				throw new IllegalArgumentException("Naziv ne sme biti prazan.");
 			
 		 this.naziv = naziv;
