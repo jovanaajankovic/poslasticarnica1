@@ -103,7 +103,7 @@ class RacunTest {
 	
 	@Test
 	void testSetAdministratorNull() {
-	     assertThrows(java.lang.IllegalArgumentException.class, () -> racun.setAdministrator(null));
+	     assertThrows(java.lang.NullPointerException.class, () -> racun.setAdministrator(null));
 	}
 	
 	
