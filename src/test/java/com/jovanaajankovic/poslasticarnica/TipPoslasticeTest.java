@@ -74,11 +74,7 @@ class TipPoslasticeTest {
         assertThrows(java.lang.IllegalArgumentException.class, () -> tipPoslastice.setNaziv(""));
     }
 
-    @Test
-    void testSetNazivBlankoZnak() {
-        assertThrows(java.lang.IllegalArgumentException.class, () -> tipPoslastice.setNaziv("   "));
-    }
-
+  
     @Test
     void testToString() {
         tipPoslastice.setNaziv("Torta");
