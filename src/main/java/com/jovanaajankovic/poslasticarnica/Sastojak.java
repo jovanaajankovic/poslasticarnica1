@@ -25,7 +25,7 @@ public class Sastojak {
 
 	 public void setPoslastica(Poslastica poslastica) {
 		 if (poslastica == null)
-		        throw new IllegalArgumentException("Poslastica ne sme biti null.");
+		        throw new NullPointerException("Poslastica ne sme biti null.");
 		   
 		 this.poslastica = poslastica;
 		 
