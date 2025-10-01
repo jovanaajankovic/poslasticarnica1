@@ -58,7 +58,7 @@ public class Sastojak {
 	  * Postavlja poslasticu kojoj sastojak pripada.
 	  * Poslastica ne sme biti null.
 	  *
-	  * @param poslastica Poslastica 
+	  * @param poslastica Poslastica kojoj sastojak pripada
 	  * @throws java.lang.NullPointerException ako je poslastica null
 	  */
 	 public void setPoslastica(Poslastica poslastica) {
