@@ -71,13 +71,13 @@ class PoslasticaTest {
     
     @Test
 	void testSetNaziv() {
-		tipPoslastice.setNaziv("Reforma");
+		poslastica.setNaziv("Reforma");
         assertEquals("Reforma", poslastica.getNaziv());
 	}
     
 	@Test
 	void testSetNazivSaRazmakom() {
-		tipPoslastice.setNaziv("Cokoladna torta");
+		poslastica.setNaziv("Cokoladna torta");
         assertEquals("Cokoladna torta", poslastica.getNaziv());
 	}
 	
