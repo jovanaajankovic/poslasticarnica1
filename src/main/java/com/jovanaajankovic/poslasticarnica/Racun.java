@@ -48,7 +48,7 @@ public class Racun {
 
 	 public void setDatumVreme(Date datumVreme) {
 		 if (datumVreme == null) 
-		        throw new IllegalArgumentException("Datum i vreme ne mogu biti null.");
+		        throw new NullPointerException("Datum i vreme ne mogu biti null.");
 		  
 		 Date danas = new Date();
 		 if (datumVreme.after(danas))
