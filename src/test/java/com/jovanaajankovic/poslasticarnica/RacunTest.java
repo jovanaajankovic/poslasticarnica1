@@ -59,7 +59,12 @@ class RacunTest {
     }
 
     @Test
-    void testSetRacunIDManjiOdJedan() {
+    void testSetRacunIDNegativan() {
+        assertThrows(java.lang.IllegalArgumentException.class, () -> racun.setRacunID(-1L));
+    }
+    
+    @Test
+    void testSetRacunIDNula() {
         assertThrows(java.lang.IllegalArgumentException.class, () -> racun.setRacunID(0L));
     }
     
@@ -92,6 +97,11 @@ class RacunTest {
 	@Test
 	void testSetCenaNegativna() {
 	     assertThrows(java.lang.IllegalArgumentException.class, () -> racun.setCena(-100.0));
+	}
+	
+	@Test
+	void testSetCenaNula() {
+	     assertThrows(java.lang.IllegalArgumentException.class, () -> racun.setCena(0.0));
 	}
 	
 
