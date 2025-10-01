@@ -29,7 +29,7 @@ class AdministratorTest {
 	}
 	
 	@Test 
-	void testAdministratorParametrizovani(){
+	void testAdministratorLongStringStringStringString(){
 		administrator = new Administrator (1L, "Jovana", "Jankovic", "jovana123", "jovana123");
 		
 		assertNotNull(administrator);
@@ -138,13 +138,13 @@ class AdministratorTest {
     
     @Test
     void testSetPassword() {
-        administrator.setPassword("jovana123");
+        administrator.setPassword("jovana123");  //vise od 8 karaktera
         assertEquals("jovana123", administrator.getPassword());
     }
     
     @Test
     void testSetPassword8Karaktera() {
-        administrator.setPassword("jovana12");
+        administrator.setPassword("jovana12"); //tacno 8 karaktera
         assertEquals("jovana12", administrator.getPassword());
     }
 
@@ -155,7 +155,7 @@ class AdministratorTest {
 
     @Test
     void testSetPasswordKratka() {
-        assertThrows(java.lang.IllegalArgumentException.class, () -> administrator.setPassword("jovana1")); // 7 karaktera
+        assertThrows(java.lang.IllegalArgumentException.class, () -> administrator.setPassword("jovana1")); // manje od 8 karaktera
     }
     
     
