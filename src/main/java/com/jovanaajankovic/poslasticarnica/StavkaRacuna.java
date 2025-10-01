@@ -30,7 +30,7 @@ public class StavkaRacuna {
 
 	 public void setRacun(Racun racun) {
 		 if (racun == null) 
-		        throw new IllegalArgumentException("Racun ne sme biti null.");
+		        throw new NullPointerException("Racun ne sme biti null.");
 		    
 		 this.racun = racun;
 		 
@@ -82,7 +82,7 @@ public class StavkaRacuna {
 
 	 public void setPoslastica(Poslastica poslastica) {
 		 if (poslastica == null) 
-		        throw new IllegalArgumentException("Poslastica ne sme biti null.");
+		        throw new NullPointerException("Poslastica ne sme biti null.");
 		    
 		 this.poslastica = poslastica;
 		 
