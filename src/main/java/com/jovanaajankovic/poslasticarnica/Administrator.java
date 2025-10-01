@@ -81,7 +81,7 @@ public class Administrator {
 		if (username == null)
 			throw new NullPointerException("Username ne sme biti null.");
 		
-		if (username.trim().isEmpty())
+		if (username.isEmpty())
 			throw new IllegalArgumentException("Username ne sme biti prazan.");
 		
 		this.username = username;
