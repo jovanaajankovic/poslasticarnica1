@@ -78,7 +78,7 @@ public class Racun {
 
 	 public void setAdministrator(Administrator administrator) {
 		 if (administrator == null) 
-		        throw new IllegalArgumentException("Racun mora imati administratora.");
+		        throw new NullPointerException("Racun mora imati administratora.");
 		 
 		 this.administrator = administrator;
 		 
