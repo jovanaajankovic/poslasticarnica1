@@ -78,7 +78,7 @@ class RacunTest {
 	
 	@Test
 	void testSetDatumVremeNull() {
-	     assertThrows(java.lang.IllegalArgumentException.class, () -> racun.setDatumVreme(null));
+	     assertThrows(java.lang.NullPointerException.class, () -> racun.setDatumVreme(null));
 	}
 
 	@Test
