@@ -95,7 +95,7 @@ public class Poslastica {
 
 	public void setTipPoslastice(TipPoslastice tipPoslastice) {
 		if (tipPoslastice == null) 
-	        throw new IllegalArgumentException("Tip poslastice ne sme biti null.");
+	        throw new NullPointerException("Tip poslastice ne sme biti null.");
 		
 		this.tipPoslastice = tipPoslastice;
 		
