@@ -48,7 +48,12 @@ class TipPoslasticeTest {
     }
 
     @Test
-    void testSetTipPoslasticeIDManjiOdJedan() {
+    void testSetTipPoslasticeIDNegativan() {
+        assertThrows(java.lang.IllegalArgumentException.class, () -> tipPoslastice.setTipPoslasticeID(-1L));
+    }
+    
+    @Test
+    void testSetTipPoslasticeIDNula() {
         assertThrows(java.lang.IllegalArgumentException.class, () -> tipPoslastice.setTipPoslasticeID(0L));
     }
     
