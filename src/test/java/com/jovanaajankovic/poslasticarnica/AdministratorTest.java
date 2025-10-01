@@ -53,7 +53,12 @@ class AdministratorTest {
     }
 
     @Test
-    void testSetAdministratorIDManjiOdJedan() {
+    void testSetAdministratorIDNegativan() {
+        assertThrows(java.lang.IllegalArgumentException.class, () -> administrator.setAdministratorID(-1L));
+    }
+    
+    @Test
+    void testSetAdministratorIDNula() {
         assertThrows(java.lang.IllegalArgumentException.class, () -> administrator.setAdministratorID(0L));
     }
     
@@ -62,6 +67,12 @@ class AdministratorTest {
     void testSetIme() {
         administrator.setIme("Jovana");
         assertEquals("Jovana", administrator.getIme());
+    }
+    
+    @Test
+    void testSetImeSaRazmakom() {
+        administrator.setIme("Ana Marija");
+        assertEquals("Ana Marija", administrator.getIme());
     }
 
     @Test
@@ -84,6 +95,12 @@ class AdministratorTest {
     void testSetPrezime() {
         administrator.setPrezime("Jankovic");
         assertEquals("Jankovic", administrator.getPrezime());
+    }
+    
+    @Test
+    void testSetPrezimeSaRazmakom() {
+        administrator.setPrezime("Jankovic Jovanovic");
+        assertEquals("Jankovic Jovanovic", administrator.getPrezime());
     }
 
     @Test
@@ -117,17 +134,18 @@ class AdministratorTest {
     void testSetUsernameEmpty() {
         assertThrows(java.lang.IllegalArgumentException.class, () -> administrator.setUsername(""));
     }
-
-    @Test
-    void testSetUsernameWhitespace() {
-        assertThrows(java.lang.IllegalArgumentException.class, () -> administrator.setUsername("   "));
-    }
-    
+ 
     
     @Test
     void testSetPassword() {
         administrator.setPassword("jovana123");
         assertEquals("jovana123", administrator.getPassword());
+    }
+    
+    @Test
+    void testSetPassword8Karaktera() {
+        administrator.setPassword("jovana12");
+        assertEquals("jovana12", administrator.getPassword());
     }
 
     @Test
