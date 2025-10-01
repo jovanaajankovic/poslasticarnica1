@@ -10,11 +10,12 @@ public class StavkaRacuna {
 
 	 
 	 public StavkaRacuna(Racun racun, int rb, int kolicina, double cena, Poslastica poslastica) {
-		 this.racun = racun;
-		 this.rb = rb;
-		 this.kolicina = kolicina;
-		 this.cena = cena;
-		 this.poslastica = poslastica;	        
+		 setRacun(racun);
+		 setRb(rb);
+		 setKolicina(kolicina);
+		 setCena(cena);
+		 setPoslastica(poslastica);
+		 
 	 }
 	 
 
@@ -28,7 +29,11 @@ public class StavkaRacuna {
 	 }
 
 	 public void setRacun(Racun racun) {
+		 if (racun == null) 
+		        throw new IllegalArgumentException("Racun ne sme biti null.");
+		    
 		 this.racun = racun;
+		 
 	 }
 
 
@@ -37,7 +42,11 @@ public class StavkaRacuna {
 	 }
 
 	 public void setRb(int rb) {
+		 if (rb <= 0)
+		        throw new IllegalArgumentException("Redni broj mora biti pozitivan broj.");
+		 
 		 this.rb = rb;
+		 
 	 }
 	 
 
@@ -46,7 +55,11 @@ public class StavkaRacuna {
 	 }
 
 	 public void setKolicina(int kolicina) {
+		 if (kolicina <= 0)
+		        throw new IllegalArgumentException("Kolicina mora biti veca od nule.");
+		 
 		 this.kolicina = kolicina;
+		 
 	 }
 
 
@@ -55,7 +68,11 @@ public class StavkaRacuna {
 	 }
 
 	 public void setCena(double cena) {
+		 if (cena <= 0)
+		        throw new IllegalArgumentException("Cena mora biti veca od nule.");
+		 
 		 this.cena = cena;
+		 
 	 }
 
 
@@ -64,7 +81,11 @@ public class StavkaRacuna {
 	 }
 
 	 public void setPoslastica(Poslastica poslastica) {
+		 if (poslastica == null) 
+		        throw new IllegalArgumentException("Poslastica ne sme biti null.");
+		    
 		 this.poslastica = poslastica;
+		 
 	 }
 	 
 

@@ -13,12 +13,13 @@ public class Poslastica {
 
   
     public Poslastica(Long poslasticaID, String naziv, double cenaPoKomadu, String opis, TipPoslastice tipPoslastice, ArrayList<Sastojak> sastojci) {
-        this.poslasticaID = poslasticaID;
-        this.naziv = naziv;
-        this.cenaPoKomadu = cenaPoKomadu;
-        this.opis = opis;
-        this.tipPoslastice = tipPoslastice;
-        this.sastojci = sastojci;
+        setPoslasticaID(poslasticaID);
+        setNaziv(naziv);
+        setCenaPoKomadu(cenaPoKomadu);
+        setOpis(opis);
+        setTipPoslastice(tipPoslastice);
+        setSastojci(sastojci);
+        
     }
 
     
@@ -32,7 +33,14 @@ public class Poslastica {
 	}
 
 	public void setPoslasticaID(Long poslasticaID) {
+		if (poslasticaID == null)
+			throw new NullPointerException("ID ne sme biti null.");
+		
+		if (poslasticaID <= 0)
+	        throw new IllegalArgumentException("ID mora biti pozitivan broj.");
+		
 		this.poslasticaID = poslasticaID;
+		
 	}
 
 
@@ -41,7 +49,14 @@ public class Poslastica {
 	}
 
 	public void setNaziv(String naziv) {
+		if (naziv == null)
+			throw new NullPointerException("Naziv ne sme biti null.");
+		
+		if (naziv.trim().isEmpty())
+			throw new IllegalArgumentException("Naziv ne sme biti prazan.");
+		
 		this.naziv = naziv;
+		
 	}
 
 
@@ -50,7 +65,11 @@ public class Poslastica {
 	}
 
 	public void setCenaPoKomadu(double cenaPoKomadu) {
+		if (cenaPoKomadu <= 0)
+	        throw new IllegalArgumentException("Cena po komadu mora biti veca od nule.");
+	    
 		this.cenaPoKomadu = cenaPoKomadu;
+		
 	}
 
 
@@ -59,7 +78,14 @@ public class Poslastica {
 	}
 
 	public void setOpis(String opis) {
+		if (opis == null)
+			throw new NullPointerException("Opis ne sme biti null.");
+		
+		if (opis.trim().isEmpty())
+			throw new IllegalArgumentException("Opis ne sme biti prazan.");
+		
 		this.opis = opis;
+		
 	}
 
 
@@ -68,7 +94,11 @@ public class Poslastica {
 	}
 
 	public void setTipPoslastice(TipPoslastice tipPoslastice) {
+		if (tipPoslastice == null) 
+	        throw new IllegalArgumentException("Tip poslastice ne sme biti null.");
+		
 		this.tipPoslastice = tipPoslastice;
+		
 	}
 
 
@@ -77,7 +107,14 @@ public class Poslastica {
 	}
 
 	public void setSastojci(ArrayList<Sastojak> sastojci) {
+		if (sastojci == null)
+			throw new NullPointerException("Lista sastojaka ne sme biti null.");
+		
+		if (sastojci.isEmpty())
+			throw new IllegalArgumentException("Poslastica mora imati bar jedan sastojak.");
+		
 		this.sastojci = sastojci;
+		
 	}
 
 

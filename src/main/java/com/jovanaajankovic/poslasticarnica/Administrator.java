@@ -12,14 +12,13 @@ public class Administrator {
     
     
     public Administrator(Long administratorID, String ime, String prezime, String username, String password) {
-        this.administratorID = administratorID;
-        this.ime = ime;
-        this.prezime = prezime;
-        this.username = username;
-        this.password = password;
+        setAdministratorID(administratorID);
+        setIme(ime);
+        setPrezime(prezime);
+        setUsername(username);
+        setPassword(password);
     }
     
-
     
     public Administrator() {
 		
@@ -31,7 +30,14 @@ public class Administrator {
 	}
 
 	public void setAdministratorID(Long administratorID) {
+		if (administratorID == null)
+			throw new NullPointerException("ID ne sme biti null.");
+		
+		if (administratorID <= 0)
+	        throw new IllegalArgumentException("ID mora biti pozitivan broj.");
+	    
 		this.administratorID = administratorID;
+		
 	}
 	
 
@@ -40,7 +46,14 @@ public class Administrator {
 	}
 
 	public void setIme(String ime) {
+		if (ime == null)
+			throw new NullPointerException("Ime ne sme biti null.");
+		
+		if (ime.trim().isEmpty())
+			throw new IllegalArgumentException("Ime ne sme biti prazno.");
+		
 		this.ime = ime;
+		
 	}
 
 	
@@ -49,7 +62,14 @@ public class Administrator {
 	}
 
 	public void setPrezime(String prezime) {
+		if (prezime == null)
+			throw new NullPointerException("Prezime ne sme biti null.");
+		
+		if (prezime.trim().isEmpty())
+			throw new IllegalArgumentException("Prezime ne sme biti prazno.");
+		
 		this.prezime = prezime;
+		
 	}
 	
 
@@ -58,7 +78,14 @@ public class Administrator {
 	}
 
 	public void setUsername(String username) {
+		if (username == null)
+			throw new NullPointerException("Username ne sme biti null.");
+		
+		if (username.trim().isEmpty())
+			throw new IllegalArgumentException("Username ne sme biti prazan.");
+		
 		this.username = username;
+		
 	}
 	
 
@@ -67,7 +94,14 @@ public class Administrator {
 	}
 
 	public void setPassword(String password) {
+		if (password == null)
+			throw new NullPointerException("Password ne sme biti null.");
+		
+		if(password.length() < 8)
+			throw new IllegalArgumentException("Password mora imati najmanje 8 karaktera.");
+		
 		this.password = password;
+		
 	}
 	
 

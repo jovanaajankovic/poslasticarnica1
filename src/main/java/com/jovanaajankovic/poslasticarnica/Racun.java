@@ -12,11 +12,12 @@ public class Racun {
 	 private ArrayList<StavkaRacuna> stavkeRacuna;
 
 	 public Racun(Long racunID, Date datumVreme, double cena, Administrator administrator, ArrayList<StavkaRacuna> stavkeRacuna) {
-		 this.racunID = racunID;
-		 this.datumVreme = datumVreme;
-		 this.cena = cena;
-		 this.administrator = administrator;
-		 this.stavkeRacuna = stavkeRacuna;
+		 setRacunID(racunID);
+		 setDatumVreme(datumVreme);
+		 setCena(cena);
+		 setAdministrator(administrator);
+		 setStavkeRacuna(stavkeRacuna);
+		 
 	 }
 	 
 	 
@@ -30,7 +31,14 @@ public class Racun {
 	 }
 
 	 public void setRacunID(Long racunID) {
+		 if (racunID == null)
+				throw new NullPointerException("ID ne sme biti null.");
+			
+		 if (racunID <= 0)
+		        throw new IllegalArgumentException("ID mora biti pozitivan broj.");
+			
 		 this.racunID = racunID;
+		 
 	 }
 
 
@@ -39,7 +47,15 @@ public class Racun {
 	 }
 
 	 public void setDatumVreme(Date datumVreme) {
+		 if (datumVreme == null) 
+		        throw new IllegalArgumentException("Datum i vreme ne mogu biti null.");
+		  
+		 Date danas = new Date();
+		 if (datumVreme.after(danas))
+		        throw new IllegalArgumentException("Datum ne moze biti u buducnosti.");
+		  
 		 this.datumVreme = datumVreme;
+		 
 	 }
 
 
@@ -48,7 +64,11 @@ public class Racun {
 	 }
 
 	 public void setCena(double cena) {
+		 if (cena <= 0)
+		        throw new IllegalArgumentException("Cena mora biti veca od nule.");
+		 
 		 this.cena = cena;
+		 
 	 }
 
 
@@ -57,7 +77,11 @@ public class Racun {
 	 }
 
 	 public void setAdministrator(Administrator administrator) {
+		 if (administrator == null) 
+		        throw new IllegalArgumentException("Racun mora imati administratora.");
+		 
 		 this.administrator = administrator;
+		 
 	 }
 
 
@@ -66,7 +90,14 @@ public class Racun {
 	 }
 
 	 public void setStavkeRacuna(ArrayList<StavkaRacuna> stavkeRacuna) {
+		 if (stavkeRacuna == null)
+				throw new NullPointerException("Lista stavki ne sme biti null.");
+			
+		 if (stavkeRacuna.isEmpty())
+				throw new IllegalArgumentException("Racun mora imati bar jednu stavku racuna.");
+			
 		 this.stavkeRacuna = stavkeRacuna;
+		 
 	 }
 	 
 	 

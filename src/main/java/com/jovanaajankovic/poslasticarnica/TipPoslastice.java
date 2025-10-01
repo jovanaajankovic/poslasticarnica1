@@ -7,8 +7,9 @@ public class TipPoslastice {
 	 
 	 
 	 public TipPoslastice(Long tipPoslasticeID, String naziv) {
-		 this.tipPoslasticeID = tipPoslasticeID;
-		 this.naziv = naziv;
+		 setTipPoslasticeID(tipPoslasticeID);
+		 setNaziv(naziv);
+		 
 	 }
 	 
 	 
@@ -22,7 +23,14 @@ public class TipPoslastice {
 	 }
 
 	 public void setTipPoslasticeID(Long tipPoslasticeID) {
+		 if (tipPoslasticeID == null)
+				throw new NullPointerException("ID ne sme biti null.");
+			
+		if (tipPoslasticeID <= 0)
+		        throw new IllegalArgumentException("ID mora biti pozitivan broj.");
+		
 		 this.tipPoslasticeID = tipPoslasticeID;
+		 
 	 }
 
 
@@ -31,7 +39,14 @@ public class TipPoslastice {
 	 }
 
 	 public void setNaziv(String naziv) {
+		 if (naziv == null)
+				throw new NullPointerException("Naziv ne sme biti null.");
+			
+		if (naziv.trim().isEmpty())
+				throw new IllegalArgumentException("Naziv ne sme biti prazan.");
+			
 		 this.naziv = naziv;
+		 
 	 }
 
 

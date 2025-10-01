@@ -7,9 +7,10 @@ public class Sastojak {
 	 private String naziv;
 
 	 public Sastojak(Poslastica poslastica, int rb, String naziv) {
-		 this.poslastica = poslastica;
-		 this.rb = rb;
-		 this.naziv = naziv;	    
+		 setPoslastica(poslastica);
+		 setRb(rb);
+		 setNaziv(naziv);
+		 
 	 }
 	 
 	 
@@ -23,7 +24,11 @@ public class Sastojak {
 	 }
 
 	 public void setPoslastica(Poslastica poslastica) {
+		 if (poslastica == null)
+		        throw new IllegalArgumentException("Poslastica ne sme biti null.");
+		   
 		 this.poslastica = poslastica;
+		 
 	 }
 
 
@@ -32,7 +37,11 @@ public class Sastojak {
 	 }
 
 	 public void setRb(int rb) {
+		 if (rb <= 0)
+		        throw new IllegalArgumentException("Redni broj mora biti pozitivan broj.");
+		 
 		 this.rb = rb;
+		 
 	 }
 
 
@@ -41,7 +50,14 @@ public class Sastojak {
 	 }
 
 	 public void setNaziv(String naziv) {
+		 if (naziv == null)
+				throw new NullPointerException("Naziv ne sme biti null.");
+			
+		 if (naziv.trim().isEmpty())
+				throw new IllegalArgumentException("Naziv ne sme biti prazan.");
+			
 		 this.naziv = naziv;
+		 
 	 }
 
 
