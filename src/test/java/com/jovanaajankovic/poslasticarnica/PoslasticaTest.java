@@ -59,8 +59,41 @@ class PoslasticaTest {
     }
 
     @Test
-    void testSetPoslasticaIDManjiOdJedan() {
+    void testSetPoslasticaIDNegativan() {
+        assertThrows(java.lang.IllegalArgumentException.class, () -> poslastica.setPoslasticaID(-1L));
+    }
+    
+    @Test
+    void testSetPoslasticaIDNula() {
         assertThrows(java.lang.IllegalArgumentException.class, () -> poslastica.setPoslasticaID(0L));
+    }
+    
+    
+    @Test
+	void testSetNaziv() {
+		tipPoslastice.setNaziv("Reforma");
+        assertEquals("Reforma", poslastica.getNaziv());
+	}
+    
+	@Test
+	void testSetNazivSaRazmakom() {
+		tipPoslastice.setNaziv("Cokoladna torta");
+        assertEquals("Cokoladna torta", poslastica.getNaziv());
+	}
+	
+	@Test
+    void testSetNazivNull() {
+        assertThrows(java.lang.NullPointerException.class, () -> poslastica.setNaziv(null));
+    }
+
+    @Test
+    void testSetNazivEmpty() {
+        assertThrows(java.lang.IllegalArgumentException.class, () -> poslastica.setNaziv(""));
+    }
+
+    @Test
+    void testSetNazivBlankoZnak() {
+        assertThrows(java.lang.IllegalArgumentException.class, () -> poslastica.setNaziv("   "));
     }
     
     
@@ -75,9 +108,20 @@ class PoslasticaTest {
 	    assertThrows(java.lang.IllegalArgumentException.class, () -> poslastica.setCenaPoKomadu(-100.0));
 	}
 	
+	@Test
+	void testSetCenaPoKomaduNula() {
+	    assertThrows(java.lang.IllegalArgumentException.class, () -> poslastica.setCenaPoKomadu(0.0));
+	}
+	
 	
 	@Test
 	void testSetOpis() {
+		poslastica.setOpis("Kremasto");
+		assertEquals("Kremasto", poslastica.getOpis());
+	}
+	
+	@Test
+	void testSetOpisSaRazmakom() {
 		poslastica.setOpis("Ukusna torta");
 		assertEquals("Ukusna torta", poslastica.getOpis());
 	}
