@@ -75,7 +75,7 @@ public class StavkaRacuna {
 
 	 /**
 	  * Vraca redni broj stavke.
-	  *     *
+	  *    
 	  * @return redni broj
 	  */
 	 public int getRb() {
