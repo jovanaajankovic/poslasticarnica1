@@ -29,12 +29,16 @@ public class PoslasticaMain {
      */
 	public static void main(String[] args) {
 		TipPoslastice tip = new TipPoslastice(1L, "Torta");
-        Poslastica p = new Poslastica(101L, "Cokoladna torta", 500, "Ukusna cokoladna torta", tip, new ArrayList<>());
-
-        Sastojak s1 = new Sastojak(p, 1, "Cokolada");
+		
+		ArrayList<Sastojak> sastojci = new ArrayList<>();
+		Poslastica p = new Poslastica();
+		Sastojak s1 = new Sastojak(p, 1, "Kakao");
         Sastojak s2 = new Sastojak(p, 2, "Secer");
-        p.getSastojci().add(s1);
-        p.getSastojci().add(s2);
+		sastojci.add(s1);
+		sastojci.add(s2);
+		
+        p = new Poslastica(101L, "Cokoladna torta", 500, "Ukusna cokoladna torta", tip, sastojci);
+
        
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
